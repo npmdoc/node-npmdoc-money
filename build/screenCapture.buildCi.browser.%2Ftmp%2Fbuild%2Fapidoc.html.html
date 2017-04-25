@@ -1,0 +1,470 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://openexchangerates.github.io/money.js">money (v0.2.0)</a>
+</h1>
+<h4>JavaScript currency conversion library.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.money">module money</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.money">
+            function <span class="apidocSignatureSpan"></span>money
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.convert">
+            function <span class="apidocSignatureSpan">money.</span>convert
+            <span class="apidocSignatureSpan">(val, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx">
+            function <span class="apidocSignatureSpan">money.</span>fx
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">money.</span>fx.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">money.</span>rates</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">money.</span>settings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">money.</span>base</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">money.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.money.fx">module money.fx</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx.fx">
+            function <span class="apidocSignatureSpan">money.</span>fx
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx.convert">
+            function <span class="apidocSignatureSpan">money.fx.</span>convert
+            <span class="apidocSignatureSpan">(val, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">money.fx.</span>rates</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">money.fx.</span>settings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">money.fx.</span>base</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">money.fx.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.money.fx.prototype">module money.fx.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx.prototype.convert">
+            function <span class="apidocSignatureSpan">money.fx.prototype.</span>convert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx.prototype.from">
+            function <span class="apidocSignatureSpan">money.fx.prototype.</span>from
+            <span class="apidocSignatureSpan">(currency)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.money.fx.prototype.to">
+            function <span class="apidocSignatureSpan">money.fx.prototype.</span>to
+            <span class="apidocSignatureSpan">(currency)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.money" id="apidoc.module.money">module money</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.money.money" id="apidoc.element.money.money">
+        function <span class="apidocSignatureSpan"></span>money
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">money = function (obj) {
+		return new fxWrapper(obj);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.money.convert" id="apidoc.element.money.convert">
+        function <span class="apidocSignatureSpan">money.</span>convert
+        <span class="apidocSignatureSpan">(val, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convert = function (val, opts) {
+		// Convert arrays recursively
+		if (typeof val === 'object' &amp;&amp; val.length) {
+			for (var i = 0; i&lt; val.length; i++ ) {
+				val[i] = convert(val[i], opts);
+			}
+			return val;
+		}
+
+		// Make sure we gots some opts
+		opts = opts || {};
+
+		// We need to know the `from` and `to` currencies
+		if( !opts.from ) opts.from = fx.settings.from;
+		if( !opts.to ) opts.to = fx.settings.to;
+
+		// Multiple the value by the exchange rate
+		return val * getRate( opts.to, opts.from );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
+	fx.rates = fxSetup.rates;
+
+	// Default exchange rate base currency (eg "USD"), which all the exchange rates are relative to
+	fx.base = fxSetup.base;
+
+	// Default from / to currencies for conversion via fx.<span class="apidocCodeKeywordSpan">convert</span>():
+	fx.settings = {
+		from : fxSetup.from || fx.base,
+		to : fxSetup.to || fx.base
+	};
+
+
+	/* --- Conversion --- */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx" id="apidoc.element.money.fx">
+        function <span class="apidocSignatureSpan">money.</span>fx
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fx = function (obj) {
+		return new fxWrapper(obj);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.money.fx" id="apidoc.module.money.fx">module money.fx</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx.fx" id="apidoc.element.money.fx.fx">
+        function <span class="apidocSignatureSpan">money.</span>fx
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fx = function (obj) {
+		return new fxWrapper(obj);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx.convert" id="apidoc.element.money.fx.convert">
+        function <span class="apidocSignatureSpan">money.fx.</span>convert
+        <span class="apidocSignatureSpan">(val, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convert = function (val, opts) {
+		// Convert arrays recursively
+		if (typeof val === 'object' &amp;&amp; val.length) {
+			for (var i = 0; i&lt; val.length; i++ ) {
+				val[i] = convert(val[i], opts);
+			}
+			return val;
+		}
+
+		// Make sure we gots some opts
+		opts = opts || {};
+
+		// We need to know the `from` and `to` currencies
+		if( !opts.from ) opts.from = fx.settings.from;
+		if( !opts.to ) opts.to = fx.settings.to;
+
+		// Multiple the value by the exchange rate
+		return val * getRate( opts.to, opts.from );
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
+	fx.rates = fxSetup.rates;
+
+	// Default exchange rate base currency (eg "USD"), which all the exchange rates are relative to
+	fx.base = fxSetup.base;
+
+	// Default from / to currencies for conversion via fx.<span class="apidocCodeKeywordSpan">convert</span>():
+	fx.settings = {
+		from : fxSetup.from || fx.base,
+		to : fxSetup.to || fx.base
+	};
+
+
+	/* --- Conversion --- */
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.money.fx.prototype" id="apidoc.module.money.fx.prototype">module money.fx.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx.prototype.convert" id="apidoc.element.money.fx.prototype.convert">
+        function <span class="apidocSignatureSpan">money.fx.prototype.</span>convert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convert = function () {
+		var args = Array.prototype.slice.call(arguments);
+		args.unshift(this._v);
+		return convert.apply(fx, args);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	// Object containing exchange rates relative to the fx.base currency, eg { "GBP" : "0.64" }
+	fx.rates = fxSetup.rates;
+
+	// Default exchange rate base currency (eg "USD"), which all the exchange rates are relative to
+	fx.base = fxSetup.base;
+
+	// Default from / to currencies for conversion via fx.<span class="apidocCodeKeywordSpan">convert</span>():
+	fx.settings = {
+		from : fxSetup.from || fx.base,
+		to : fxSetup.to || fx.base
+	};
+
+
+	/* --- Conversion --- */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx.prototype.from" id="apidoc.element.money.fx.prototype.from">
+        function <span class="apidocSignatureSpan">money.fx.prototype.</span>from
+        <span class="apidocSignatureSpan">(currency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">from = function (currency) {
+		var wrapped = fx(convert(this._v, {from: currency, to: fx.base}));
+		wrapped._fx = fx.base;
+		return wrapped;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	// fx(val).convert(opts) does the same thing as fx.convert(val, opts)
+	fxProto.convert = function() {
+		var args = Array.prototype.slice.call(arguments);
+		args.unshift(this._v);
+		return convert.apply(fx, args);
+	};
+
+	// fx(val).<span class="apidocCodeKeywordSpan">from</span>(currency) returns a wrapped `fx` where the value has been converted
+from
+	// `currency` to the `fx.base` currency. Should be followed by `.to(otherCurrency)`
+	fxProto.from = function(currency) {
+		var wrapped = fx(convert(this._v, {from: currency, to: fx.base}));
+		wrapped._fx = fx.base;
+		return wrapped;
+	};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.money.fx.prototype.to" id="apidoc.element.money.fx.prototype.to">
+        function <span class="apidocSignatureSpan">money.fx.prototype.</span>to
+        <span class="apidocSignatureSpan">(currency)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">to = function (currency) {
+		return convert(this._v, {from: this._fx ? this._fx : fx.settings.from, to: currency});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	fxProto.convert = function() {
+		var args = Array.prototype.slice.call(arguments);
+		args.unshift(this._v);
+		return convert.apply(fx, args);
+	};
+
+	// fx(val).from(currency) returns a wrapped `fx` where the value has been converted from
+	// `currency` to the `fx.base` currency. Should be followed by `.<span class="apidocCodeKeywordSpan">to</span>(otherCurrency)`
+	fxProto.from = function(currency) {
+		var wrapped = fx(convert(this._v, {from: currency, to: fx.base}));
+		wrapped._fx = fx.base;
+		return wrapped;
+	};
+
+	// fx(val).to(currency) returns the value, converted from `fx.base` to `currency`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
